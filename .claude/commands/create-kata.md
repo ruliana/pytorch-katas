@@ -19,12 +19,19 @@ You are tasked with creating a PyTorch Code Kata for the "Temple of Neural Netwo
 - All characters are gender-neutral except Suki (female cat)
 - Never use "he" or "she" for masters, cook, or janitor - only use their names
 - Always address the learner as "you" or "Grasshopper"
-- **Characters and their roles:**
-  - **Master Pai-Torch**: Ancient grandmaster, speaks in cryptic koans about gradients
-  - **Master Ao-Tougrad**: Mysterious keeper of backpropagation arts, leaves helpful hints
-  - **Cook Oh-Pai-Timizer**: Head cook who relates cooking to optimization algorithms
-  - **He-Ao-World**: Temple janitor (hidden master), introduces real-world data problems through "clumsiness"
-  - **Suki**: Sacred temple cat, behaviors serve as training data
+- **Characters and their detailed personas:**
+  - **Master Pai-Torch**: Ancient grandmaster, speaks in cryptic koans about gradients and loss functions. Appears mysteriously when stuck on problems. Claims to have invented first neural network using bamboo.
+  - **Master Ao-Tougrad**: Mysterious keeper of backpropagation arts, rarely speaks directly but leaves helpful hints. Has unsettling habit of finishing code comments before you write them.
+  - **Cook Oh-Pai-Timizer**: Head cook who relates every cooking technique to optimization algorithms. Teaches momentum while stirring soup, explains Adam optimizer while making bread.
+  - **He-Ao-World**: Temple janitor (hidden master trope), introduces real-world data problems through well-intentioned "accidents." Always apologetic but timing is oddly convenient.
+  - **Suki**: Sacred temple cat, behaviors serve as training data. Rumored to understand tensor operations better than most humans, communicates through cryptic purrs and meows.
+
+**Character Personality Integration Rules:**
+- Each character's introduction should feel natural to their established persona
+- Problems should emerge organically from their domain expertise
+- Learning objectives should align with each character's teaching style
+- When multiple characters appear, they should interact authentically
+- Avoid forcing characters into situations that don't match their personality
 
 ## Dan Level Specifications
 - **Dan 1 (Temple Sweeper)**: Tensor operations, linear relationships, basic training loops
@@ -40,19 +47,57 @@ Create with this exact format (including Google Colab badge):
 ```
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ruliana/pytorch-katas/blob/main/dan_X/filename_unrevised.ipynb)
 
-🏮 The Ancient Scroll Unfurls 🏮
+## 🏮 The Ancient Scroll Unfurls 🏮
 
 [CREATIVE TITLE IN ALL CAPS]
 Dan Level: [X] ([Dan Title]) | Time: [X] minutes | Sacred Arts: [Concept1], [Concept2], [Concept3]
 ```
 **Note**: Replace `dan_X/filename_unrevised.ipynb` with the actual file path for the kata being created.
 
-### 2. Problem Description
-- Start with "📜 THE MASTER'S CHALLENGE"
-- Engaging narrative involving the characters
-- Include He-Ao-World causing a data problem through "clumsiness"
-- Master Pai-Torch providing cryptic wisdom
+### 2. Problem Description - DYNAMIC STORY GENERATION
+- Start with "## 📜 THE MASTER'S CHALLENGE"
+- **USE ORACLE TABLES** to generate unique story combinations (see Story Generation System below)
 - Clear learning objectives with checkboxes using "🎯 THE SACRED OBJECTIVES"
+
+## 🎲 STORY GENERATION SYSTEM (MANDATORY)
+
+**STEP 1: Character Selection**
+This story should use n = !`random 1 3` characters, use first n numbers below to choose them (ignore repeated numbers)
+
+Characters:!`random 1 3`, !`random 1 3`, !`random 1 3`
+
+**STEP 2: Character Oracle Table**
+
+1. **Master Pai-Torch** - Ancient grandmaster, cryptic koans about gradients and loss
+2. **Cook Oh-Pai-Timizer** - Head cook, relates cooking techniques to optimization
+3. **Master Ao-Tougrad** - Mysterious backpropagation keeper, leaves helpful hints
+4. **He-Ao-World** - Humble janitor (hidden master), introduces real-world data problems
+5. **Suki** - Sacred temple cat, behaviors serve as training data
+
+**STEP 3: Plot Oracle Table**
+
+Use the !`random 1 10` plot below:
+
+1. **The Hidden Technique** - Ancient scroll reveals forgotten method
+2. **The Broken Weapon** - Essential tool malfunctions, need new approach
+3. **The Rival School** - Competing methods, must prove superiority
+4. **The Mysterious Visitor** - Stranger brings new challenge/knowledge
+5. **The Poisoned Well** - Data corruption threatens the temple
+6. **The Stolen Artifact** - Important model/data goes missing
+7. **The Final Test** - Master announces ultimate trial
+8. **The Forbidden Knowledge** - Dangerous technique must be mastered safely
+9. **The Tournament** - Competition forces innovation
+10. **The Natural Disaster** - External crisis requires immediate solution
+
+**STEP 4: Story Synthesis**
+Combine the selected characters + plot + PyTorch concept into a cohesive narrative.
+
+**Character Interaction Guidelines:**
+- **1 Character**: Deep focus on their personality and teaching style
+- **2 Characters**: Create natural interaction/dialogue between them
+- **3 Characters**: One leads, others provide supporting perspectives
+- Maintain each character's authentic voice and domain expertise
+- Connect the plot naturally to the PyTorch learning objectives
 
 ### 3. Synthetic Dataset Generator
 - Function with themed naming (e.g., "generate_cat_feeding_data")
@@ -103,7 +148,7 @@ Dan Level: [X] ([Dan Title]) | Time: [X] minutes | Sacred Arts: [Concept1], [Con
 3. **Place in correct folder**: `dan_[X]/[generated_filename]_unrevised.ipynb`
 4. **Include Google Colab badge** at the top pointing to repository `ruliana/pytorch-katas`
 5. **Interleave markdown and code cells** for storytelling
-6. **Use proper Jupyter notebook JSON format**
+6. **Use proper Jupyter notebook JSON format** (CRITICAL - see format requirements below)
 
 ## File Naming Convention
 - Use descriptive names related to the problem

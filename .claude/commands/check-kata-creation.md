@@ -3,6 +3,7 @@ description: Thoroughly validate the most recent kata creation against all requi
 allowed-tools: 
   - Read
   - NotebookRead
+  - NotebookWrite
   - Bash
   - LS
   - Glob
@@ -19,7 +20,8 @@ You must conduct a complete inspection of the most recent kata creation to ensur
 ### 1. **FIRST: Identify the Most Recent Kata**
 - Use git log or file timestamps to find the most recently created kata file
 - Look for files with `_unrevised.ipynb` suffix
-- Confirm the file exists and is a valid Jupyter notebook
+- Confirm the file exists and is a valid Jupyter notebook in proper JSON format
+- Check that it contains properly formatted cells, not raw markdown text
 
 ### 2. **SECOND: Comprehensive Structure Validation**
 
@@ -33,10 +35,12 @@ You must conduct a complete inspection of the most recent kata creation to ensur
 
 #### Problem Description Requirements ✅/❌
 - [ ] **Opening**: Starts with "📜 THE MASTER'S CHALLENGE"
-- [ ] **Character Integration**: All characters used appropriately
-- [ ] **He-Ao-World**: Introduces data problems through "clumsiness"
-- [ ] **Master Pai-Torch**: Provides cryptic wisdom about the concept
-- [ ] **Narrative Flow**: Engaging story that sets up the problem
+- [ ] **Character Integration**: All characters used appropriately and authentically
+- [ ] **Story Uniqueness**: Uses different character combinations than previous katas
+- [ ] **Plot Variety**: Uses different plot framework than recent katas
+- [ ] **Character Authenticity**: Characters behave according to their established personas
+- [ ] **Oracle System Usage**: Evidence of using !`random` commands for story generation
+- [ ] **Narrative Flow**: Engaging story that sets up the problem naturally
 - [ ] **Sacred Objectives**: Clear checkboxes with "🎯 THE SACRED OBJECTIVES"
 
 #### Synthetic Dataset Generator Requirements ✅/❌
@@ -120,8 +124,9 @@ You must conduct a complete inspection of the most recent kata creation to ensur
 #### File Management ✅/❌
 - [ ] **Correct Location**: Placed in proper `dan_X/` folder
 - [ ] **Naming Convention**: Descriptive name with `_unrevised.ipynb` suffix
-- [ ] **Jupyter Format**: Valid notebook with proper cell structure
-- [ ] **Cell Types**: Appropriate mix of markdown and code cells
+- [ ] **Jupyter Format**: Valid notebook with proper JSON structure (not raw markdown)
+- [ ] **Cell Types**: Appropriate mix of markdown and code cells with proper formatting
+- [ ] **Headers in Cells**: All headers (like "🏮 The Ancient Scroll Unfurls 🏮") are in markdown cells
 
 #### README Integration ✅/❌
 - [ ] **Entry Added**: New kata listed in README.md

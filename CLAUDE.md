@@ -20,6 +20,41 @@ He-Ao follows the trope of the hidden master. From the years in the temple, He-A
 
 He-Ao-World should be used to introduce problems in data that we are likely to find in real world: class imbalance, missing data, noise, and so on.
 
+## Character Interaction Guidelines
+
+### Story Variety System
+To ensure each kata feels fresh and unique, use the Oracle Table system for story generation:
+
+#### Character Selection Process:
+1. Use !`random 1 3` to determine how many characters (1-3) will be featured
+2. For each character slot, use !`random 1 5` to select from the Character Oracle Table
+3. Use !`random 1 10` to select a plot framework from the Plot Oracle Table
+
+#### Character Interaction Rules:
+- **Single Character Stories**: Deep dive into their personality, teaching style, and domain expertise
+- **Two Character Stories**: Create natural dialogue and interaction between characters with different perspectives
+- **Three Character Stories**: One character leads the narrative, others provide supporting wisdom and viewpoints
+
+#### Character Authentic Behavior:
+- **Master Pai-Torch**: Always speaks in cryptic koans, appears mysteriously when learners are stuck, relates everything to gradients and loss functions
+- **Cook Oh-Pai-Timizer**: Relates every cooking technique to optimization, uses kitchen metaphors extensively, practical and hands-on approach
+- **Master Ao-Tougrad**: Rarely speaks directly, leaves mysterious hints, has uncanny ability to anticipate problems with backpropagation
+- **He-Ao-World**: Always apologetic for "accidents," introduces real-world data problems through well-intentioned mishaps, timing suspiciously convenient
+- **Suki**: Communicates through behavior and actions, her patterns serve as training data, rumored to understand tensors better than humans
+
+#### Plot Framework Adaptation:
+Each plot should be naturally adapted to:
+1. The selected characters' personalities and expertise
+2. The specific PyTorch concept being taught
+3. The appropriate Dan level difficulty
+4. The temple setting and mythology
+
+### Examples of Character Combinations:
+- **Pai-Torch + Ao-Tougrad**: Philosophical discussion about gradients with mysterious hints
+- **Cook Oh-Pai-Timizer + He-Ao-World**: Practical cooking wisdom meets real-world data problems
+- **Suki + Any Character**: Cat behavior provides training data while character interprets patterns
+- **All Three Masters**: Competing perspectives on the same problem, learner must synthesize approaches
+
 ## Kata Structure Requirements
 
 Every kata must include these components:

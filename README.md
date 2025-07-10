@@ -97,9 +97,10 @@ All katas in this repository:
 
 ### Dan 1: Temple Sweeper 🧹
 
-- **[The Trial of the Eternal Flame's Wisdom](dan_1/temple_candle_burning_predictor_unrevised.ipynb)** - Master the fundamentals of PyTorch by predicting candle burn times. Learn tensor operations, linear layers, and basic training loops through the sacred art of flame prediction. *Concepts: Tensor flows, Linear wisdom, Training rituals*
+- [**The Mystery of the Sacred Soup Proportions**](dan_1/sacred_soup_proportions_unrevised.ipynb) - Learn linear relationships and basic training loops by helping Cook Oh-Pai-Timizer discover the hidden soup recipe formula when the temple's ancient scales break.
 
-- **[The Sacred Rice Portion Prophecy](dan_1/temple_rice_portion_calculator_unrevised.ipynb)** - Advance your PyTorch mastery through multi-feature rice portion prediction. Learn data preprocessing, feature scaling, optimizer comparison, and model evaluation while managing the temple's meal planning. *Concepts: Multi-feature tensors, Optimizer wisdom, Data scaling*
+- [**The Mystery of the Stolen Sacred Scrolls**](dan_1/temple_scroll_authentication_unrevised.ipynb) - Master tensor manipulation and binary classification by helping Master Pai-Torch and Suki authenticate ancient scrolls and catch the cunning forger who has infiltrated the temple.
+
 
 ---
 
