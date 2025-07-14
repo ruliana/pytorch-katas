@@ -97,10 +97,19 @@ All katas in this repository:
 
 ### Dan 1: Temple Sweeper 🧹
 
-- [**The Mystery of the Sacred Soup Proportions**](dan_1/sacred_soup_proportions_unrevised.ipynb) - Learn linear relationships and basic training loops by helping Cook Oh-Pai-Timizer discover the hidden soup recipe formula when the temple's ancient scales break.
+**[The Forbidden Candle Flame Prophecy](dan_1/kata_01_temple_candle_burning_predictor_unrevised.ipynb)**  
+*Master the dangerous art of gradient descent by predicting temple candle burning times. Learn to tame the gradient spirits through proper training rituals while discovering the mystical relationship between candle weight and burning duration. Features Master Pai-Torch's forbidden knowledge and Master Ao-Tougrad's gradient wisdom.*  
+**Core Concepts:** Linear regression, gradient descent, training loops, basic PyTorch fundamentals
 
-- [**The Mystery of the Stolen Sacred Scrolls**](dan_1/temple_scroll_authentication_unrevised.ipynb) - Master tensor manipulation and binary classification by helping Master Pai-Torch and Suki authenticate ancient scrolls and catch the cunning forger who has infiltrated the temple.
+**[The Sacred Hunger Oracle: Mastering Suki's Feeding Prophecy](dan_1/kata_02_temple_cat_feeding_predictor_unrevised.ipynb)**  
+*Discover the hidden technique of predicting when Suki the temple cat will appear for food. Learn the sacred art of linear relationships and gradient descent by understanding the mystical connection between time and hunger. Master Pai-Torch guides you through proper training rituals while you explore batch processing, data normalization, and decision boundaries.*  
+**Core Concepts:** Linear regression, gradient descent, PyTorch fundamentals, batch processing, data normalization, decision boundaries
 
+### Dan 2: Temple Guardian 🛡️
+
+**[The Forbidden Scroll Guardian: Mastering the Deeper Mysteries](dan_2/kata_01_temple_scroll_authenticity_guardian_unrevised.ipynb)**  
+*Master the dangerous art of deep neural networks by learning to authenticate ancient temple scrolls. Discover the forbidden knowledge of multi-layer architectures while mastering the Sacred Safeguards - dropout regularization, validation discipline, and early stopping. Master Pai-Torch and Master Ao-Tougrad guide you through the treacherous path of deep learning, teaching you to balance complexity with generalization.*  
+**Core Concepts:** Multi-layer networks, dropout regularization, train/validation/test splits, Adam optimizer, overfitting prevention, binary classification
 
 ---
 
