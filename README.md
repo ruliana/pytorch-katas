@@ -1,15 +1,14 @@
 # The Temple of Neural Networks: A PyTorch Martial Arts Journey 🏯
 
-<picture>
-  <source srcset="intro.png">
-</picture>
-
-
 ## **The Sacred Temple**
 
 High in the misty mountains stands the **Temple of Neural Networks**, an ancient monastery where monks have mastered the mystical arts of machine learning. For centuries, they have studied the flow of gradients, the dance of backpropagation, and the deep mysteries of optimization.
 
 You arrive as a humble **Grasshopper** 🦗, eager but untrained, ready to begin the sacred journey from novice to master.
+
+<picture>
+  <source srcset="intro.png">
+</picture>
 
 ---
 
