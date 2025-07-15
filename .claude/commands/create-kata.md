@@ -57,54 +57,33 @@ Dan Level: [X] ([Dan Title]) | Time: [X] minutes | Sacred Arts: [Concept1], [Con
 ```
 **Note**: Replace `dan_X/kata_nn_filename_unrevised.ipynb` with the actual file path for the kata being created.
 
-### 2. Problem Description - DYNAMIC STORY GENERATION
+### 2. Problem Description - CONCISE STORY GENERATION
 - Start with "## 📜 THE CHALLENGE"
-- **USE ORACLE TABLES** to generate unique story combinations (see Story Generation System below)
+- **Create exactly 2 paragraphs** based on user's one-liner input (see Story Creation Approach below)
 - Clear learning objectives with checkboxes using "🎯 THE SACRED OBJECTIVES"
 
-## 🎲 STORY GENERATION SYSTEM (MANDATORY)
+## 📜 STORY CREATION APPROACH
 
-**STEP 0: Choose the Neural Network and PyTorch techniques**
+**User-Driven Story Generation:**
+- User provides a one-liner describing the challenge/scenario
+- Expand this into exactly **2 paragraphs** for "📜 THE CHALLENGE" section
+- Keep it concise and focused on the PyTorch learning objective
 
-Decide which technique will be the theme of the Kata. Carefully consider the Dan level and previous Katas.
+**Story Structure Guidelines:**
+- **Paragraph 1**: Introduce the scenario and character(s) naturally
+- **Paragraph 2**: Present the specific challenge and learning objective
+- Any master wisdom should directly relate to the PyTorch concept being taught
+- Avoid lengthy atmospheric descriptions - focus on the technical learning goal
 
-**STEP 1: Character Selection**
-This story should use n = !`random 1 3` characters, use first n numbers below to choose them (ignore repeated numbers)
+**Character Selection:**
+- Choose 1-2 characters maximum that naturally fit the scenario
+- Each character should contribute directly to understanding the PyTorch concept
+- Maintain authentic character voices but keep interactions brief and relevant
 
-Characters:!`random 1 3`, !`random 1 3`, !`random 1 3`
-
-**STEP 2: Character Oracle Table**
-
-1. **Master Pai-Torch** - Ancient grandmaster, cryptic koans about gradients and loss
-2. **Cook Oh-Pai-Timizer** - Head cook, relates cooking techniques to optimization
-3. **Master Ao-Tougrad** - Mysterious backpropagation keeper, leaves helpful hints
-4. **He-Ao-World** - Humble janitor (hidden master), introduces real-world data problems
-5. **Suki** - Sacred temple cat, behaviors serve as training data
-
-**STEP 3: Plot Oracle Table**
-
-Use the !`random 1 10` plot below:
-
-1. **The Hidden Technique** - The Grasshopper discovers a secret technique through observation or accident
-2. **The Shortcut's Punishment** - The Grasshopper attempts shortcuts in training and faces severe consequences/harder training
-3. **Training Hidden as Mundane Tasks** - The Grasshopper is tasked with mundane chores that secretly teach advanced techniques
-4. **The Forbidden Knowledge** - Dangerous technique must be mastered safely under strict supervision
-5. **The Rival's Challenge** - A rival appears to challenge the Grasshopper's progress, forcing them to prove their mastery
-6. **The Breaking Point** - The Grasshopper must overcome physical/mental limits through extreme conditioning
-7. **The Master's Test** - The Grasshopper faces a seemingly impossible task that reveals their true understanding
-8. **The Blindfolded Training** - Training while deprived of sight to develop other senses and intuition
-9. **The Ancient Manual** - A cryptic training scroll must be deciphered and its techniques mastered
-10. **The Final Confrontation** - The ultimate test where the Grasshopper must face their greatest challenge using all learned skills
-
-**STEP 4: Story Synthesis**
-Combine the selected characters + plot + PyTorch concept into a cohesive narrative.
-
-**Character Interaction Guidelines:**
-- **1 Character**: Deep focus on their personality and teaching style
-- **2 Characters**: Create natural interaction/dialogue between them
-- **3 Characters**: One leads, others provide supporting perspectives
-- Maintain each character's authentic voice and domain expertise
-- Connect the plot naturally to the PyTorch learning objectives
+**Technical Integration:**
+- Connect the story directly to the PyTorch learning objectives
+- Ensure character guidance relates to actual coding challenges
+- Keep the narrative engaging but subordinate to the educational goal
 
 ### 3. Synthetic Dataset Generator
 - Function with themed naming (e.g., "generate_cat_feeding_data")
@@ -114,6 +93,23 @@ Combine the selected characters + plot + PyTorch concept into a cohesive narrati
 - No external data dependencies
 
 **Example Template:**
+
+```python
+# 📦 FIRST CELL - ALL IMPORTS AND CONFIGURATION
+import torch
+import torch.nn as nn
+import torch.optim as optim
+import matplotlib.pyplot as plt
+import numpy as np
+from typing import Tuple
+
+# Set reproducibility
+torch.manual_seed(42)
+
+# Global configuration constants
+DEFAULT_CHAOS_LEVEL = 0.1
+SACRED_SEED = 42
+```
 
 ```python
 # 🐱 THE SACRED DATA GENERATION SCROLL
@@ -134,8 +130,6 @@ def generate_cat_feeding_data(n_observations: int = 100, chaos_level: float = 0.
     Returns:
         Tuple of (hours_since_last_meal, hunger_level) as sacred tensors
     """
-    torch.manual_seed(seed)
-
     # Suki can go 0-30 hours between meals (she's very dramatic)
     hours_since_meal = torch.rand(n_observations, 1) * 30
 
@@ -172,7 +166,7 @@ def visualize_cat_wisdom(hours: torch.Tensor, hunger: torch.Tensor,
                 label='Sacred Feeding Threshold (Suki Appears!)')
     plt.xlabel('Hours Since Last Meal')
     plt.ylabel('Suki\'s Hunger Level')
-    plt.title('🐱 The Mysteries of Temple Cat Appetite 🐱')
+    plt.title('The Mysteries of Temple Cat Appetite')
     plt.legend()
     plt.grid(True, alpha=0.3)
     plt.ylim(0, 100)
@@ -465,8 +459,11 @@ def unsteady_training(model, features, target, epochs=1000):
 
 ## Technical Requirements
 - All code must use PyTorch (even for simple problems)
-- Include proper imports at the beginning
-- Use torch.manual_seed for reproducibility
+- **All imports, global configurations, and constants must be consolidated in the first code cell**
+  - Include all necessary imports (torch, torch.nn, torch.optim, matplotlib.pyplot, etc.)
+  - Set reproducibility seeds (torch.manual_seed(42))
+  - Define any global constants or configuration variables
+  - This ensures clean notebook structure and easy dependency management
 - Include matplotlib for visualizations
 - Focus on building PyTorch muscle memory
 - Code should be pedagogically sound
