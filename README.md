@@ -7,7 +7,7 @@ High in the misty mountains stands the **Temple of Neural Networks**, an ancient
 You arrive as a humble **Grasshopper** 🦗, eager but untrained, ready to begin the sacred journey from novice to master.
 
 <picture>
-  <source srcset="intro.png">
+  <img src="intro.png" title="The Temple of Neural Networks">
 </picture>
 
 ---
