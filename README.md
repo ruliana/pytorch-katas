@@ -105,6 +105,10 @@ All katas in this repository:
 
 - **[Cook Oh-Pai-Timizer's Door Wisdom: The Sigmoid Gate Mystery](dan_1/kata_02_temple_door_humidity_predictor_unrevised.ipynb)** - Master binary classification and sigmoid activation by helping Cook Oh-Pai-Timizer predict which temple doors will stick based on humidity levels. Learn to transform continuous measurements into yes/no decisions and understand probability thresholds for practical decision making. *Concepts: Binary classification, sigmoid activation, binary cross-entropy loss, decision thresholds*
 
+- **[The Mystery of Convenient Clumsiness: Detecting Hidden Patterns in Apparent Accidents](dan_1/kata_03_he_ao_world_accident_pattern_detector_unrevised.ipynb)** - Learn multi-variable binary classification by helping Master Ao-Tougrad detect whether He-Ao-World's daily "accidents" are genuine mistakes or suspiciously convenient timing. Master processing multiple input features simultaneously and understand how different types of evidence combine to reveal hidden patterns. *Concepts: Multi-variable classification, feature engineering, model interpretability, confidence analysis*
+
+- **[The Sacred Bells of Ceremony Wisdom: A Multi-Class Classification Journey](dan_1/kata_04_temple_bell_ceremony_classifier_unrevised.ipynb)** - Master multi-class classification by helping Master Pai-Torch identify temple ceremonies from bell pitch frequencies. Learn to distinguish between four different ceremonies using softmax activation and cross-entropy loss, understanding how single features can reveal multiple categorical truths. *Concepts: Multi-class classification, softmax activation, cross-entropy loss, probability interpretation*
+
 ---
 
 ## **About This Repository**
