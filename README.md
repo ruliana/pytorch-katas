@@ -109,6 +109,8 @@ All katas in this repository:
 
 - **[The Sacred Bells of Ceremony Wisdom: A Multi-Class Classification Journey](dan_1/kata_04_temple_bell_ceremony_classifier_unrevised.ipynb)** - Master multi-class classification by helping Master Pai-Torch identify temple ceremonies from bell pitch frequencies. Learn to distinguish between four different ceremonies using softmax activation and cross-entropy loss, understanding how single features can reveal multiple categorical truths. *Concepts: Multi-class classification, softmax activation, cross-entropy loss, probability interpretation*
 
+- **[The Master's Eye: Categorizing the Spiritual Journey](dan_1/kata_05_temple_visitor_spiritual_observer_unrevised.ipynb)** - Master multi-variable multi-class classification by helping Master Pai-Torch categorize temple visitors into three spiritual stages (nervous novices, steady practitioners, serene masters) using multiple behavioral features. Learn to process walking speed, posture, question frequency, and breathing patterns simultaneously to reveal inner development stages. *Concepts: Multi-variable classification, feature interactions, softmax activation, model interpretation*
+
 ---
 
 ## **About This Repository**
