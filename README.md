@@ -111,6 +111,8 @@ All katas in this repository:
 
 - **[The Master's Eye: Categorizing the Spiritual Journey](dan_1/kata_05_temple_visitor_spiritual_observer_unrevised.ipynb)** - Master multi-variable multi-class classification by helping Master Pai-Torch categorize temple visitors into three spiritual stages (nervous novices, steady practitioners, serene masters) using multiple behavioral features. Learn to process walking speed, posture, question frequency, and breathing patterns simultaneously to reveal inner development stages. *Concepts: Multi-variable classification, feature interactions, softmax activation, model interpretation*
 
+- **[The Twin Mysteries of Suki's Nature: Classification Meets Regression](dan_1/kata_06_suki_dual_behavior_predictor_unrevised.ipynb)** - Master multi-output learning by creating a single neural network that simultaneously predicts both Suki's behavioral mode (hunting vs napping classification) and her activity intensity level (continuous regression). Learn to combine different loss functions, understand when to use classification versus regression for different aspects of the same problem, and build models that speak both discrete and continuous languages. *Concepts: Multi-output networks, combined loss functions, classification + regression, dual performance evaluation*
+
 ---
 
 ## **About This Repository**
