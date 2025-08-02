@@ -101,7 +101,7 @@ All katas in this repository:
 
 ### Dan 1: Temple Sweeper 🧹
 
-- **[The Mysteries of Suki's Appetite: A Linear Revelation](dan_1/kata_01_temple_cat_feeding_predictor_unrevised.ipynb)** - Master the fundamentals of PyTorch through linear regression, predicting when the temple cat will appear at her feeding bowl. Learn tensor operations, gradient descent, and the sacred training loop while decoding Suki's feeding patterns. *Concepts: Linear layers, MSE loss, SGD optimizer, gradient management*
+- **[The Mysteries of Suki's Appetite: A Linear Revelation](dan_1/kata_01_temple_cat_feeding_predictor.ipynb)** - Master the fundamentals of PyTorch through linear regression, predicting when the temple cat will appear at her feeding bowl. Learn tensor operations, gradient descent, and the sacred training loop while decoding Suki's feeding patterns. *Concepts: Linear layers, MSE loss, SGD optimizer, gradient management*
 
 - **[Cook Oh-Pai-Timizer's Door Wisdom: The Sigmoid Gate Mystery](dan_1/kata_02_temple_door_humidity_predictor_unrevised.ipynb)** - Master binary classification and sigmoid activation by helping Cook Oh-Pai-Timizer predict which temple doors will stick based on humidity levels. Learn to transform continuous measurements into yes/no decisions and understand probability thresholds for practical decision making. *Concepts: Binary classification, sigmoid activation, binary cross-entropy loss, decision thresholds*
 
