@@ -220,6 +220,8 @@ def train(model: nn.Module, features: torch.Tensor, target: torch.Tensor, epochs
 
     losses = []
 
+    gradient_is_good = False
+    previous_loss = None
     for epoch in range(epochs):
         # TODO: CRITICAL - Clear the gradient spirits from previous cycle
         # Hint: The spirits accumulate if not banished properly
@@ -240,10 +242,14 @@ def train(model: nn.Module, features: torch.Tensor, target: torch.Tensor, epochs
         losses.append(loss.item())
 
         # Report progress to Master Pai-Torch
-        if (epoch + 1) % 100 == 0:
-            print(f'Epoch [{epoch+1}/{epochs}], Loss: {loss.item():.4f}')
-            if loss.item() < 10:
-                print("💫 The Gradient Spirits smile upon your progress!")
+        if (epoch + 1) % int(epochs / 10) == 0:
+            gradient_message = ""
+            # Stable enough gradient
+            if not gradient_is_good and previous_loss and 1 - (loss / previous_loss) <= 0.01:
+                gradient_message = " 💫 The Gradient Spirits smile upon your progress!"
+                gradient_is_good = True
+            previous_loss = loss
+            print(f'Epoch [{epoch+1}/{epochs}], Loss: {loss.item():.4f} {gradient_message}')
 
     return losses
 ```
