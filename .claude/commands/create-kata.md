@@ -95,7 +95,7 @@ Dan Level: [X] ([Dan Title]) | Time: [X] minutes | Sacred Arts: [Concept1], [Con
 **Example Template:**
 
 ```python
-# 📦 FIRST CELL - ALL IMPORTS AND CONFIGURATION
+# 📦 ALL IMPORTS AND CONFIGURATION
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -103,19 +103,19 @@ import matplotlib.pyplot as plt
 import numpy as np
 from typing import Tuple
 
-# Set reproducibility
-torch.manual_seed(42)
-
 # Global configuration constants
 DEFAULT_CHAOS_LEVEL = 0.1
-SACRED_SEED = 42
+FEEDING_THRESHOLD = 70  # Hunger level at which Suki appears
+
+print("🏮 The Temple of Neural Networks welcomes you, Grasshopper!")
+print(f"PyTorch version: {torch.__version__}")
+print("🐱 Suki stirs from her afternoon nap, sensing the approach of learning...")
 ```
 
 ```python
 # 🐱 THE SACRED DATA GENERATION SCROLL
 
-def generate_cat_feeding_data(n_observations: int = 100, chaos_level: float = 0.1,
-                             sacred_seed: int = 42) -> Tuple[torch.Tensor, torch.Tensor]:
+def generate_cat_feeding_data(n_observations: int = 100, chaos_level: float = 0.1) -> Tuple[torch.Tensor, torch.Tensor]:
     """
     Generate observations of Suki's feeding patterns.
 
@@ -162,10 +162,10 @@ def visualize_cat_wisdom(hours: torch.Tensor, hunger: torch.Tensor,
         plt.plot(sorted_hours.numpy(), sorted_predictions.detach().numpy(),
                 'gold', linewidth=3, label='Your Mystical Predictions')
 
-    plt.axhline(y=70, color='red', linestyle='--', alpha=0.7,
+    plt.axhline(y=FEEDING_THRESHOLD, color='red', linestyle='--', alpha=0.7,
                 label='Sacred Feeding Threshold (Suki Appears!)')
-    plt.xlabel('Hours Since Last Meal')
-    plt.ylabel('Suki\'s Hunger Level')
+    plt.xlabel('Hours Since Last Meal (feature)')
+    plt.ylabel('Suki\'s Hunger Level (target)')
     plt.title('The Mysteries of Temple Cat Appetite')
     plt.legend()
     plt.grid(True, alpha=0.3)
@@ -194,6 +194,7 @@ class CatHungerPredictor(nn.Module):
         super(CatHungerPredictor, self).__init__()
         # TODO: Create the Linear layer
         # Hint: torch.nn.Linear transforms input energy into output wisdom
+        # It needs input_features and output_features (how many predictions?)
         self.linear = None
 
     def forward(self, features: torch.Tensor) -> torch.Tensor:
@@ -202,8 +203,7 @@ class CatHungerPredictor(nn.Module):
         # Remember: even cats follow mathematical laws
         return None
 
-def train(model: nn.Module, features: torch.Tensor, target: torch.Tensor,
-               epochs: int = 1000, learning_rate: float = 0.01) -> list:
+def train(model: nn.Module, features: torch.Tensor, target: torch.Tensor, epochs: int = 4_000) -> list:
     """
     Train the cat hunger prediction model.
 
@@ -215,7 +215,7 @@ def train(model: nn.Module, features: torch.Tensor, target: torch.Tensor,
     criterion = None
 
     # TODO: Choose your parameter updating method
-    # Hint: SGD is the traditional path, simple and effective
+    # Hint: SGD (Stochastic Gradient Descent) is the traditional path
     optimizer = None
 
     losses = []
@@ -223,6 +223,7 @@ def train(model: nn.Module, features: torch.Tensor, target: torch.Tensor,
     for epoch in range(epochs):
         # TODO: CRITICAL - Clear the gradient spirits from previous cycle
         # Hint: The spirits accumulate if not banished properly
+        # This is the most common mistake in PyTorch training!
 
         # TODO: Forward pass - get predictions
         predictions = None
@@ -231,8 +232,10 @@ def train(model: nn.Module, features: torch.Tensor, target: torch.Tensor,
         loss = None
 
         # TODO: Backward pass - compute gradients
+        # Hint: Loss knows how to compute its own gradients
 
         # TODO: Update parameters
+        # Hint: The optimizer knows how to update using the gradients
 
         losses.append(loss.item())
 
@@ -247,222 +250,145 @@ def train(model: nn.Module, features: torch.Tensor, target: torch.Tensor,
 
 ### 5. Success Criteria
 - "⚡ THE TRIALS OF MASTERY" section
-- Quantitative metrics (loss targets, accuracy thresholds)
-- Unit test function called "test_your_wisdom"
-- Parameter validation matching expected values
-- Convergence behavior requirements
+- Dynamic checkbox system with real-time evaluation
+- Quantitative metrics with pass/fail indicators
+- Comprehensive performance analysis
+- Clear success and failure messaging
 
 **Example Template:**
 
 ```python
-# ⚡ THE TRIALS OF MASTERY
+# TRIALS OF MASTERY
+print("⚡ TRIAL 1: BASIC MASTERY")
 
-## Trial 1: Basic Mastery
-# - [ ] Loss decreases consistently (no angry Gradient Spirits)
-# - [ ] Final loss below 50 (Suki approves of your predictions)
-# - [ ] Model weight approximately 2.5 (±0.5), bias around 20 (±5)
-# - [ ] Predictions form a clean line through the scattered data
+# Check your progress
+final_loss = loss_history[-1] if loss_history else float('inf')
+weight_accuracy = abs(learned_weight - 2.5) < 0.5
+bias_accuracy = abs(learned_bias - 20) < 5
 
-## Trial 2: Understanding Test
-def test_your_wisdom(model):
-    """Master PyTorch's evaluation of your understanding."""
-    # Your model should produce correct shapes
-    test_features = torch.tensor([[5.0], [10.0], [20.0]])
-    predictions = model(test_features)
-    assert predictions.shape == (3, 1), "The shapes must align!"
+# Check if loss decreases consistently (last loss < first loss by significant margin)
+loss_decreases = len(loss_history) > 100 and loss_history[-1] < loss_history[99] * 0.9
 
-    # Parameters should reflect the true cat nature
-    weight = model.linear.weight.item()
-    bias = model.linear.bias.item()
-    assert 2.0 <= weight <= 3.0, f"Weight {weight:.2f} seems off - cats are more predictable!"
-    assert 15 <= bias <= 25, f"Bias {bias:.2f} - even well-fed cats have base hunger!"
+# Check if predictions form a clean line (R² > 0.8)
+with torch.no_grad():
+    predictions = model(hours_since_meal)
+    y_mean = hunger_levels.mean()
+    ss_tot = ((hunger_levels - y_mean) ** 2).sum()
+    ss_res = ((hunger_levels - predictions) ** 2).sum()
+    r_squared = 1 - (ss_res / ss_tot)
+    clean_line = r_squared > 0.8
 
-    print("🎉 Master Pai-Torch nods with approval - your understanding grows!")
+# Trial 1 checkboxes
+loss_check = "✅" if loss_decreases else "❌"
+weight_bias_check = "✅" if (weight_accuracy and bias_accuracy) else "❌"
+line_check = "✅" if clean_line else "❌"
+
+print(f"- {loss_check} Loss decreases consistently (no angry Gradient Spirits)")
+print(f"- {weight_bias_check} Model weight approximately 2.5 (±0.5), bias around 20 (±5)")
+print(f"- {line_check} Predictions form a clean line through the scattered data")
+
+# Trial 2: Understanding Test
+print("\n⚡ TRIAL 2: UNDERSTANDING TEST")
+
+# Test prediction shapes
+test_features = torch.tensor([[5.0], [10.0], [20.0]])
+with torch.no_grad():
+    test_predictions = model(test_features)
+
+shapes_correct = test_predictions.shape == (3, 1)
+weight_reasonable = 2.0 <= learned_weight <= 3.0
+bias_reasonable = 15 <= learned_bias <= 25
+
+# Test prediction reasonableness
+test_pred_values = test_predictions.squeeze().tolist()
+expected_approx = [2.5 * 5 + 20, 2.5 * 10 + 20, 2.5 * 20 + 20]  # [32.5, 45, 70]
+predictions_reasonable = all(abs(pred - exp) <= 10 for pred, exp in zip(test_pred_values, expected_approx))
+
+# Trial 2 checkboxes
+shapes_check = "✅" if shapes_correct else "❌"
+weight_param_check = "✅" if weight_reasonable else "❌"
+bias_param_check = "✅" if bias_reasonable else "❌"
+pred_check = "✅" if predictions_reasonable else "❌"
+
+print(f"- {shapes_check} Tensor shapes align with the sacred geometry")
+print(f"- {weight_param_check} Weight parameter reflects feline wisdom")
+print(f"- {bias_param_check} Bias parameter captures base hunger levels")
+print(f"- {pred_check} Predictions are reasonable for test inputs")
+
+# Your Performance section
+print(f"\n📊 Your Performance:")
+print(f"- Weight accuracy: {learned_weight:.3f} {'(PASS)' if weight_accuracy else '(FAIL)'}")
+print(f"- Bias accuracy: {learned_bias:.3f} {'(PASS)' if bias_accuracy else '(FAIL)'}")
+
+# Overall success check
+trial1_passed = loss_decreases and weight_accuracy and bias_accuracy and clean_line
+trial2_passed = shapes_correct and weight_reasonable and bias_reasonable and predictions_reasonable
+
+if trial1_passed and trial2_passed:
+    print("\n🎉 Master Pai-Torch nods with approval - your understanding grows!")
+    print("\n🏆 Congratulations! You have passed the basic trials of the Temple Sweeper!")
+    print("🐱 Suki purrs approvingly - your neural network has learned her sacred patterns.")
+else:
+    print("\n🤔 The path to mastery requires more practice. Consider adjusting your training parameters.")
+    print("💡 Hint: Try different learning rates, more epochs, or review your code for errors.")
 ```
 
 ### 6. Progressive Extensions (4 EXTENSIONS REQUIRED)
 - "🌸 THE FOUR PATHS OF MASTERY: PROGRESSIVE EXTENSIONS"
-- Each extension introduces a character with new challenges
-- Progressive difficulty increase (+15%, +25%, +35%, +45%)
-- New concepts for each extension
-- Clear success criteria for each
+- Simple exploratory bullet points with emojis for visual appeal
+- Focus on encouraging experimentation rather than full implementations
+- Each suggestion should build understanding through hands-on exploration
 
 **Example Template:**
 
-```python
-# 🌸 THE FOUR PATHS OF MASTERY: PROGRESSIVE EXTENSIONS
+```markdown
+## 🌸 THE FOUR PATHS OF MASTERY: PROGRESSIVE EXTENSIONS
 
-## Extension 1: Cook Oh-Pai-Timizer's Portion Control
-# "A good cook knows that batch size affects the final dish!"
+*Master Pai-Torch gestures toward four different pathways leading deeper into the temple.*
 
-# *Cook Oh-Pai-Timizer bustles over, wooden spoon in hand*
-#
-# "Ah, grasshopper! I see you've mastered feeding one cat at a time. But what happens
-# when you need to predict hunger for multiple cats simultaneously? In my kitchen,
-# efficiency comes from preparing multiple servings at once!"
+"You have learned the fundamental way, grasshopper. But mastery comes through exploring the branching paths."
 
-# NEW CONCEPTS: Batch processing, tensor shapes, vectorized operations
-# DIFFICULTY: +15% (still Dan 1, but with batches)
-
-def generate_multi_cat_data(n_cats: int = 5, observations_per_cat: int = 50):
-    """
-    Generate feeding data for multiple temple cats at once.
-    
-    Returns:
-        Tuple of (batch_hours, batch_hunger_levels)
-        Shape: (n_cats * observations_per_cat, 1) for both tensors
-    """
-    # TODO: Create batched data that your model can process all at once
-    # Hint: Your existing model should work without changes!
-    pass
-
-# TRIAL: Feed batched data to your existing model
-# SUCCESS: Model processes multiple cats simultaneously, same accuracy
-
-## Extension 2: He-Ao-World's Measurement Mix-up
-# "These old eyes sometimes read the measuring scrolls incorrectly..."
-
-# *He-Ao-World shuffles over, looking apologetic*
-#
-# "Oh dear! I was recording Suki's feeding times and... well, I might have mixed up
-# some of the measurements. Some are in minutes instead of hours, and others might
-# be twice what they should be. The data looks a bit... chaotic now."
-
-# NEW CONCEPTS: Data normalization, feature scaling, handling inconsistent units
-# DIFFICULTY: +25% (still Dan 1, but messier data)
-
-def normalize_feeding_data(hours_since_meal: torch.Tensor, hunger_levels: torch.Tensor):
-    """
-    Clean and normalize the feeding data to handle measurement inconsistencies.
-    
-    Returns:
-        Tuple of (normalized_hours, normalized_hunger)
-    """
-    # TODO: Implement data normalization
-    # Hint: (data - mean) / std is a common normalization approach
-    # Remember: Store the normalization parameters for later use!
-    pass
-
-# TRIAL: Train your model on normalized data
-# SUCCESS: Model converges faster and more reliably
-
-## Extension 3: Master Pai-Torch's Patience Teaching
-# "The eager student trains too quickly and learns too little."
-
-# *Master Pai-Torch sits in contemplative silence*
-#
-# "Young grasshopper, I observe your training ritual rushes like a mountain stream.
-# But wisdom comes to those who vary their pace. Sometimes we must step boldly,
-# sometimes cautiously, sometimes we must rest entirely."
-
-# NEW CONCEPTS: Learning rate scheduling, early stopping, training patience
-# DIFFICULTY: +35% (still Dan 1, but smarter training)
-
-def patient_training_ritual(model, features, target, epochs=2000, patience=100):
-    """
-    Train with patience and adaptive learning rate.
-    
-    Args:
-        patience: Stop training if loss doesn't improve for this many epochs
-    
-    Returns:
-        Tuple of (trained_model, loss_history, stopped_early)
-    """
-    # TODO: Implement patient training with learning rate decay
-    # Hint: Start with lr=0.1, reduce by half every 500 epochs
-    # Hint: Keep track of best loss and stop if no improvement
-    pass
-
-# TRIAL: Compare patient training vs. rushed training
-# SUCCESS: Patient training achieves better final loss with fewer wasted epochs
-
-## Extension 4: Suki's Feeding Threshold Mystery
-# "Understanding when the cat appears is as important as predicting hunger."
-
-# *Suki sits majestically, then meows once*
-#
-# *Master Pai-Torch translates: "The sacred cat says your linear wisdom is sound, but
-# the true test is knowing when hunger becomes action. At what point does prediction
-# become decision?"*
-
-# NEW CONCEPTS: Threshold analysis, decision boundaries, model interpretation
-# DIFFICULTY: +45% (still Dan 1, but thinking beyond prediction)
-
-def analyze_feeding_threshold(model, features, target, threshold_candidates=[60, 65, 70, 75, 80]):
-    """
-    Analyze how well your model predicts when Suki will actually appear.
-    
-    Returns:
-        Dictionary of {threshold: accuracy_score}
-    """
-    # TODO: For each threshold, calculate:
-    # - How often model predicts "Suki will appear" (prediction > threshold)
-    # - How often this prediction is correct
-    # - Find the threshold that maximizes accuracy
-    pass
-
-def visualize_decision_boundary(model, features, target, best_threshold):
-    """
-    Show where your model draws the line between "hungry" and "will appear"
-    """
-    # TODO: Create a visualization showing:
-    # - Original data points
-    # - Model predictions
-    # - Decision threshold line
-    # - True/false positive regions
-    pass
-
-# TRIAL: Find the optimal threshold for predicting Suki's appearance
-# SUCCESS: Achieve >80% accuracy in predicting when Suki will show up
-# MASTERY: Understand that good predictions don't always mean good decisions
+🔍 **Reduce the number of epochs.** How well does the model fit?
+⚡ **Increase or decrease the learning rate in SGD (default is 0.001).** What happens to the loss? What if you adjust the number of epochs? Can you make it converge?
+🎯 **Increase the chaos in Suki's data.** How chaotic can you make it and still get reasonable results?
+🌟 **Increase or decrease the number of observations in Suki's data.** What's the minimum amount needed for learning? What happens if you increase it? Does it affect the required number of epochs or the learning rate?
 ```
 
-### 7. Debugging Challenge
-- "🔥 CORRECTING YOUR FORM: A STANCE IMBALANCE" section
-- Intentionally flawed code with common mistakes
-- Master Pai-Torch providing guidance
-- Clear hints for identification and fixing
-- Focused on gradient/training issues
+### 7. Completion Ceremony
+- "🏆 COMPLETION CEREMONY" section
+- Summary of sacred knowledge acquired
+- Final wisdom and encouragement
+- Reference to next steps in their journey
 
 **Example Template:**
 
-```python
-# 🔥 CORRECTING YOUR FORM: A STANCE IMBALANCE
+```markdown
+## 🏆 COMPLETION CEREMONY
 
-# Master Pai-Torch observes your training ritual with a careful eye. "Your eager mind races ahead of your disciplined form, grasshopper. See how your gradient flow stance wavers?"
+*Master Pai-Torch rises and bows respectfully*
 
-# A previous disciple left this flawed training ritual. Your form has become unsteady - can you restore proper technique?
+"Congratulations, young grasshopper. You have successfully completed your first kata in the Temple of Neural Networks. Through Suki's simple feeding patterns, you have learned the fundamental mysteries that underlie all neural arts:
 
-def unsteady_training(model, features, target, epochs=1000):
-    """This training stance has lost its balance - your form needs correction! 🥋"""
-    criterion = nn.MSELoss()
-    optimizer = optim.SGD(model.parameters(), lr=0.01)
+**Sacred Knowledge Acquired:**
+- **Tensor Mastery**: You can create and manipulate PyTorch tensors with confidence
+- **Linear Wisdom**: You understand how neural networks transform input to output
+- **Gradient Discipline**: You have mastered the sacred training loop and gradient management
+- **Loss Understanding**: You can measure and minimize prediction errors
 
-    for epoch in range(epochs):
-        # Forward pass
-        predictions = model(features)
-        loss = criterion(predictions, target)
+**Final Wisdom:**
+Remember always: every complex neural network, no matter how sophisticated, is built upon the simple principles you practiced here. The gradient flows, the loss decreases, and wisdom emerges from the dance between prediction and reality.
 
-        # Backward pass
-        loss.backward()
-        optimizer.step()
+🐱 *Suki purrs approvingly from her perch, as if to say: "You are ready for greater challenges, young neural warrior."*
 
-        if epoch % 100 == 0:
-            print(f'Epoch {epoch}: Loss = {loss.item():.4f}')
-
-    return model
-
-# DEBUGGING CHALLENGE: Can you spot the critical error in this training ritual?
-# HINT: The Gradient Spirits are not being properly dismissed between cycles
-# MASTER'S WISDOM: "The undisciplined mind accumulates old thoughts, just as the untrained gradient accumulates old directions."
+🏮 **May your gradients flow smoothly and your losses converge swiftly!** 🏮"
 ```
 
 ## Technical Requirements
 - All code must use PyTorch (even for simple problems)
 - **All imports, global configurations, and constants must be consolidated in the first code cell**
   - Include all necessary imports (torch, torch.nn, torch.optim, matplotlib.pyplot, etc.)
-  - Set reproducibility seeds (torch.manual_seed(42))
   - Define any global constants or configuration variables
+  - Include welcoming print statements with temple theming
   - This ensures clean notebook structure and easy dependency management
 - Include matplotlib for visualizations
 - Focus on building PyTorch muscle memory
