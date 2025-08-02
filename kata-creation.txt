@@ -1,0 +1,55 @@
+# Dan 1 - Restructured for Single-Variable and Multi-Variable Practice
+
+## Linear Regression
+
+/create-kata 1 "The temple's ancient prayer candles burn at different rates depending on wax composition, room temperature, and humidity levels. Master Ao-Tougrad cryptically mentions that 'understanding multiple flows leads to understanding gradient flows.' Create a multi-variable linear model to predict burn times using multiple input features."
+
+## Binary Classification
+
+/create-kata 1 "The temple's ancient wooden doors either open smoothly or stick stubbornly based on the current humidity level. Cook Oh-Pai-Timizer needs to know which doors to avoid when carrying hot soup. Master single-variable binary classification and sigmoid activation through this simple threshold-based decision problem using humidity as the only input feature."
+
+/create-kata 1 "He-Ao-World's daily 'accidents' around the temple fall into two categories: genuine mistakes and suspiciously convenient timing. Master Ao-Tougrad hints that the truth requires observing multiple clues: time of day, location, witnesses present, and task complexity. Build a multi-variable binary classifier to detect hidden patterns in apparent clumsiness."
+
+## Multi-class Classification
+
+/create-kata 1 "The temple's prayer bells produce distinct tones for different ceremonies. Years of use have made identification difficult, but Master Pai-Torch explains that pitch alone reveals the ceremony type. Create a single-variable multi-class classifier to identify morning, noon, evening, or midnight ceremonies based on bell pitch frequency."
+
+/create-kata 1 "Master Pai-Torch observes that temple visitors can be categorized into three groups: nervous novices, steady practitioners, and serene masters. Learn multi-variable multi-class classification by analyzing walking speed, meditation posture, question frequency, and breathing patterns. Master the art of spiritual observation using softmax activation with multiple input features."
+
+## Mixed Practice
+
+/create-kata 1 "Master Pai-Torch presents the ultimate Dan 1 challenge: Suki's behavior prediction requires both classification (hunting/napping mode) and regression (activity intensity level). Learn to combine both supervised learning approaches in a single model and understand when to use classification versus regression for different aspects of the same problem."
+
+# Dan 2 - Temple Guardian: Robustness and Defense Training
+
+## Guardian Initiation - Validation & Overfitting Detection
+
+/create-kata 2 "The temple's new Guardian training begins with a critical lesson: recognizing when defenses are failing. Master Pai-Torch presents Suki's behavior data collected over many months, but warns that memorizing past patterns without understanding leads to poor decisions when new situations arise. Learn to split data into training and validation sets, detect overfitting through learning curves, and understand the guardian's first principle: **A model that perfectly memorizes the past but fails on new challenges is no guardian at all.**"
+
+## Basic Defense Training - L1 Regularization
+
+/create-kata 2 "Cook Oh-Pai-Timizer's recipe optimization model has grown too complex, memorizing every minor ingredient variation instead of learning the essential cooking principles. Master Ao-Tougrad introduces the 'Sparse Wisdom' technique: L1 regularization forces the model to choose only the most important ingredients. Learn to implement L1 penalty, understand how it promotes feature selection, and embrace the guardian's second principle: **True strength comes from knowing what to ignore, not from grasping everything.**"
+
+## Basic Defense Training - L2 Regularization  
+
+/create-kata 2 "He-Ao-World's cleaning schedule predictor has become overly sensitive to minor daily variations, causing dramatic schedule changes from tiny input differences. Guardian training teaches the 'Smooth Wisdom' approach: L2 regularization keeps model weights small and stable. Master the weight decay technique, understand how it prevents extreme parameter values, and learn the guardian's third principle: **Gentle influence endures longer than forceful extremes.**"
+
+## Advanced Protection - Dropout Training
+
+/create-kata 2 "Master Pai-Torch reveals an ancient guardian technique: 'The Art of Selective Blindness.' During training, randomly ignore some neural connections to prevent over-reliance on specific pathways. Apply dropout to a multi-layer temple visitor classification model, understand how temporary 'forgetting' prevents overfitting, and master the guardian's fourth principle: **A guardian who depends on every tool is fragile; one who adapts when tools fail is invincible.**"
+
+## Fortification Building - Multiple Layer Architecture
+
+/create-kata 2 "The temple's defenses require deeper understanding than single-layer models can provide. Guardian trainee work: build a multi-layer neural network to classify temple scroll authenticity. Learn to stack linear layers with activation functions, understand how depth enables complex pattern recognition, and discover the guardian's fifth principle: **Layer by layer, simple truths combine to reveal complex wisdom.**"
+
+## Patrol Optimization - SGD vs Adam Optimizers
+
+/create-kata 2 "Two guardian training methods compete for effectiveness: Master Ao-Tougrad's steady, momentum-based approach (SGD with momentum) versus Cook Oh-Pai-Timizer's adaptive, efficient technique (Adam optimizer). Compare both methods on the same temple bell classification task, understand how different optimizers affect convergence speed and stability, and learn the guardian's sixth principle: **The best path to mastery adapts to the terrain of learning.**"
+
+## Master Guardian Arts - Batch Normalization
+
+/create-kata 2 "Advanced guardian technique revealed: 'Internal Harmony Maintenance.' Batch normalization keeps internal layer activations stable during training, preventing the dreaded 'internal covariate shift' that can destabilize deep networks. Implement batch normalization in a multi-layer temple visitor behavior model, understand how normalizing layer inputs accelerates training, and embrace the guardian's seventh principle: **Inner balance enables outer strength; stabilize within to excel without.**"
+
+## Master Guardian Arts - Early Stopping
+
+/create-kata 2 "The final guardian wisdom: knowing when to stop. Master Pai-Torch teaches that training too long leads to memorization, not understanding. Implement early stopping with patience and validation monitoring on a temple scroll authentication network. Learn to save the best model during training, understand the validation loss plateau that signals optimal stopping, and master the guardian's ultimate principle: **The wise guardian knows when enough is enough; perfection beyond generalization is the path to failure.**"
